@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    concurrent-ruby (1.0.2-java)
     jruby-jars (9.1.5.0)
     jruby-rack (1.1.20)
     rack (1.6.4)
@@ -23,6 +24,7 @@ PLATFORMS
   java
 
 DEPENDENCIES
+  concurrent-ruby
   rack
   sinatra
   warbler (= 2.0.1)
