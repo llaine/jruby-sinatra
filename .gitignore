@@ -1,0 +1,4 @@
+*.war
+target
+/bin
+.bundle

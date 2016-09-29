@@ -1,0 +1,46 @@
+<!--
+ ! Excerpted from "Deploying with JRuby 9k",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/jkdepj2 for more book information.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Deploying JRuby</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <style>
+    .stock {
+      background-color: red
+    }
+  </style>
+</head>
+<body>
+<h1>Stock Service</h1>
+<p>This is a simple form to test the Stock Service</p>
+
+<form action="/stockify" id="stockForm">
+  Enter some text: <input type="text" name="s">
+  <input type="submit" value="Submit">
+</form>
+
+<div id="result"></div>
+
+<script>
+// Attach a submit handler to the form
+$( "#stockForm" ).submit(function( event ) {
+  event.preventDefault();
+
+  var $form = $( this ),
+    body = $form.find( "input[name='s']" ).val(),
+    url = $form.attr( "action" );
+
+  $.post( url, body ).done(function( data ) {
+    $( "#result" ).empty().html( data );
+  });
+});
+</script>
+</body>
+</html>
